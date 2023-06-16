@@ -5,30 +5,30 @@ const USERNAME_KEY = "username";
 
 const loginForm = document.querySelector(".login-form");
 const loginInput = loginForm.querySelector("input");
-const greeting = document.querySelector("#greeting");
+const nameText = document.querySelector(".name__text");
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 function onChkinSubmit(event) {
-  const username = loginInput.value;
-  localStorage.setItem(USERNAME_KEY, username);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
 
-  event.preventDefault();
+    event.preventDefault();
 
-  loginForm.classList.add(HIDDEN_CLASSNAME);
-  paintGreetings(username);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    paintnameTexts(username);
 }
 
-function paintGreetings(username) {
-  greeting.innerText = `Hello, ${username}`;
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+function paintnameTexts(username) {
+    nameText.innerText = username;
+    nameText.classList.remove(HIDDEN_CLASSNAME);
 }
 
 if (savedUsername === null) {
-  // show the form
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  loginForm.addEventListener("submit", onChkinSubmit);
+    // show the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onChkinSubmit);
 } else {
-  // show the greetings
-  paintGreetings(savedUsername);
+    // show the nameTexts
+    paintnameTexts(savedUsername);
 }

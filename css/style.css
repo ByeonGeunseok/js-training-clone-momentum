@@ -1,3 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+html {
+    background: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    background: none;
+    appearance: none;
+    border: 0;
+    font-size: 22px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+input:focus,
+input:active {
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin-top: 50px;
+}
+
 .hidden {
-  display: none;
+    display: none;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center .name__input {
+    appearance: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 36px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+.center .name__input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.center .name__input:focus,
+.center .name__input:active {
+    outline: none;
+}
+
+.center .name__text {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.bgImage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+.text__box {
+    width: 500px;
+    height: 150px;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 20px;
+    padding-right: 100px;
+    background-color: #333333;
+    opacity: 0.5;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#clock {
+    font-size: 7.5em;
+}
+
+#todo__input {
+    margin-top: 10px;
 }
